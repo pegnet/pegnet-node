@@ -151,11 +151,11 @@ func (n *PegnetNode) WriteOPRBlock(block *opr.OprBlock) error {
 
 		// Asset pricing
 		winner := block.GradedOPRs[0]
-		for asset, price := range winner.Assets {
+		for asset := range winner.Assets {
 			at := database.AssetPricingTimeSeries{
 				TimeSeries: t,
 				Asset:      asset,
-				Price:      price,
+				Price:      winner.Assets.Value(asset),
 			}
 			err = database.InsertAssetTimeSeries(tx, &at)
 			if err != nil {
