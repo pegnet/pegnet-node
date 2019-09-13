@@ -105,6 +105,14 @@ func (n *PegnetNode) Run(ctx context.Context) {
 				if err == nil {
 					break
 				}
+
+				first := g.GetFirstOPRBlock()
+				err = g.Burns.UpdateBurns(g.Config, first.Dbht)
+				if err != nil {
+					// A failed burn update is odd, but we try again on each new block.
+					log.WithField("id", "grader").WithError(err).Errorf("failed to update burns")
+				}
+
 				if err != nil {
 					// If this fails, we probably can't recover this block.
 					// Can't hurt to try though
