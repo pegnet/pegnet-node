@@ -72,6 +72,17 @@ func (n *PegnetNode) Run(ctx context.Context) {
 			time.Sleep(2 * time.Second)
 			continue
 		}
+
+		// If there is no error, we should also update the burns
+		first := g.GetFirstOPRBlock()
+		if first != nil {
+			err = g.Burns.UpdateBurns(g.Config, first.Dbht)
+			if err != nil {
+				// A failed burn update is odd, but we try again on each new block.
+				log.WithField("id", "grader").WithError(err).Errorf("failed to update burns")
+			}
+		}
+
 		break // Initial sync done
 	}
 
