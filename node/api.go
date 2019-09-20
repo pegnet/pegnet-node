@@ -39,10 +39,10 @@ func (n *PegnetNode) NodeAPI(w http.ResponseWriter, r *http.Request) {
 		result, apiError = n.HandleGenericTimeSeries(request.Params, &[]database.UniqueGradedCoinbasesTimeSeries{})
 	case "asset-list":
 		result = common.AllAssets
-	case "debug-pnt-addresses":
-		prefix := "PNT"
+	case "debug-peg-addresses":
+		prefix := "PEG"
 		if net, _ := common.LoadConfigNetwork(n.config); net == common.TestNetwork {
-			prefix = "tPNT"
+			prefix = "tPEG"
 		}
 
 		// This is kind of a debugging api call. I don't necessarily want to document it as something we should
