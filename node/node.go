@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/pegnet/pegnet-node/node/database"
+	"github.com/pegnet/pegnet/balances"
 	"github.com/pegnet/pegnet/common"
 	"github.com/pegnet/pegnet/opr"
 	log "github.com/sirupsen/logrus"
@@ -22,16 +23,19 @@ type PegnetNode struct {
 
 	config       *config.Config
 	NodeDatabase *database.PegnetNodeDatabase
+	balances     *balances.BalanceTracker
+	burns        *NodeBurnTracking
 
 	// We need to embed this so we have the same functionality as the existing one
 	opr.IOPRBlockStore
 }
 
-func NewPegnetNode(config *config.Config, monitor common.IMonitor, grader *opr.QuickGrader) (*PegnetNode, error) {
+func NewPegnetNode(config *config.Config, monitor common.IMonitor, grader *opr.QuickGrader, balances *balances.BalanceTracker) (*PegnetNode, error) {
 	n := new(PegnetNode)
 	n.config = config
 	n.FactomMonitor = monitor
 	n.PegnetGrader = grader
+	n.balances = balances
 
 	var err error
 	n.NodeDatabase, err = database.NewPegnetNodeDatabase(config)
@@ -45,6 +49,8 @@ func NewPegnetNode(config *config.Config, monitor common.IMonitor, grader *opr.Q
 	// Overwrite the blockstore with our node, so we capture every new opr synced.
 	n.IOPRBlockStore = grader.BlockStore
 	grader.BlockStore = n
+
+	n.burns = NewNodeBurnTracking(n.balances, n)
 
 	return n, nil
 }
@@ -76,7 +82,7 @@ func (n *PegnetNode) Run(ctx context.Context) {
 		// If there is no error, we should also update the burns
 		first := g.GetFirstOPRBlock()
 		if first != nil {
-			err = g.Burns.UpdateBurns(g.Config, first.Dbht)
+			err = n.burns.UpdateBurns(g.Config, first.Dbht)
 			if err != nil {
 				// A failed burn update is odd, but we try again on each new block.
 				log.WithField("id", "grader").WithError(err).Errorf("failed to update burns")
@@ -107,7 +113,7 @@ func (n *PegnetNode) Run(ctx context.Context) {
 				}
 
 				first := g.GetFirstOPRBlock()
-				err = g.Burns.UpdateBurns(g.Config, first.Dbht)
+				err = n.burns.UpdateBurns(g.Config, first.Dbht)
 				if err != nil {
 					// A failed burn update is odd, but we try again on each new block.
 					log.WithField("id", "grader").WithError(err).Errorf("failed to update burns")

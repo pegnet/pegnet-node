@@ -37,6 +37,10 @@ func (n *PegnetNode) NodeAPI(w http.ResponseWriter, r *http.Request) {
 		result, apiError = n.HandleGenericTimeSeries(request.Params, &[]database.AssetPricingTimeSeries{})
 	case "unique-coinbase":
 		result, apiError = n.HandleGenericTimeSeries(request.Params, &[]database.UniqueGradedCoinbasesTimeSeries{})
+	case "fct-burns":
+		result, apiError = n.HandleGenericTimeSeries(request.Params, &[]database.FCTBurnsTimeSeries{})
+	case "total-fct-burns":
+		result, apiError = n.TotalFCTBurns(request.Params)
 	case "asset-list":
 		result = common.AllAssets
 	case "debug-peg-addresses":
@@ -95,6 +99,19 @@ func (n *PegnetNode) HandleGenericTimeSeries(gparams interface{}, target interfa
 	}
 
 	return target, nil
+}
+
+func (n *PegnetNode) TotalFCTBurns(gparams interface{}) (int64, *api.Error) {
+	var t struct {
+		Burned int64
+	}
+	dbErr := n.NodeDatabase.DB.Table("fct_burns_time_series").Select("sum(total_burned) as burned").Scan(&t)
+	if dbErr.Error != nil {
+		n.logger().WithError(dbErr.Error).Error("failed to get total burns")
+		return -1, api.NewInternalError()
+	}
+
+	return t.Burned, nil
 }
 
 // As2DArray changes the response format from an array of objects to a 2d array for easier

@@ -43,7 +43,7 @@ var pegnetNode = &cobra.Command{
 		monitor := pcmd.LaunchFactomMonitor(pcmd.Config)
 		grader := pcmd.LaunchGrader(pcmd.Config, monitor, b, ctx, false)
 
-		pegnetnode, err := node.NewPegnetNode(pcmd.Config, monitor, grader)
+		pegnetnode, err := node.NewPegnetNode(pcmd.Config, monitor, grader, b)
 		if err != nil {
 			pcmd.CmdError(cmd, err)
 		}

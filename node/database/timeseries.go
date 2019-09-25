@@ -108,6 +108,13 @@ type UniqueGradedCoinbasesTimeSeries struct {
 	UniqueWinningCoinbases int
 }
 
+type FCTBurnsTimeSeries struct {
+	TimeSeries
+	TotalBurned int64
+	Addresses   string // Array of strings comma separated
+	Amounts     string // Array of int64s comma separated
+}
+
 func AutoMigrateTimeSeries(db *gorm.DB) {
 	db.AutoMigrate(&DifficultyTimeSeries{})
 	db.AutoMigrate(&NetworkHashrateTimeSeries{})
@@ -115,16 +122,21 @@ func AutoMigrateTimeSeries(db *gorm.DB) {
 	db.AutoMigrate(&UniqueGradedCoinbasesTimeSeries{})
 
 	db.AutoMigrate(&AssetPricingTimeSeries{})
+	db.AutoMigrate(&FCTBurnsTimeSeries{})
 }
 
 func TimeSeriesFromOPRBlock(block *opr.OprBlock) (t TimeSeries, err error) {
-	dblock, _, err := factom.GetDBlockByHeight(block.Dbht)
+	return TimeSeriesFromHeight(block.Dbht)
+}
+
+func TimeSeriesFromHeight(height int64) (t TimeSeries, err error) {
+	dblock, _, err := factom.GetDBlockByHeight(height)
 	if err != nil {
 		return t, err
 	}
 
 	t.Timestamp = time.Unix(int64(dblock.Header.Timestamp)*60, 0)
-	t.BlockHeight = block.Dbht
+	t.BlockHeight = height
 	return t, nil
 }
 
