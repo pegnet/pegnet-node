@@ -20,4 +20,5 @@ require (
 	golang.org/x/mobile v0.0.0-20190814143026-e8b3e6111d02 // indirect
 	golang.org/x/tools v0.0.0-20190815144358-9065c182e3b6 // indirect
 	honnef.co/go/tools v0.0.1-2019.2.2 // indirect
+	launchpad.net/gocheck v0.0.0-20140225173054-000000000087 // indirect
 )
