@@ -13,7 +13,7 @@ require (
 	github.com/kr/pty v1.1.8 // indirect
 	github.com/lib/pq v1.2.0 // indirect
 	github.com/mattn/go-sqlite3 v1.11.0 // indirect
-	github.com/pegnet/pegnet v0.2.1
+	github.com/pegnet/pegnet v0.3.0
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cobra v0.0.5
 	github.com/zpatrick/go-config v0.0.0-20190509173111-460869022dbd

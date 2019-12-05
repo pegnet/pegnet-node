@@ -210,6 +210,8 @@ github.com/openzipkin/zipkin-go v0.1.6/go.mod h1:QgAqvLzwWbR/WpD4A3cGpPtJrZXNIiJ
 github.com/pegnet/LXR256 v0.0.0-20190721001507-5e925f415fa2/go.mod h1:11Z6s/PoxMH3ON6Kh+2MxNFdaq9op2sgvIAqg52d/3I=
 github.com/pegnet/LXRHash v0.0.0-20190804152355-33fa380b63d6 h1:6yibGm8rJ1/E+zlVcoF5VHDuLBzHpSnx9T6WzBsCfcU=
 github.com/pegnet/LXRHash v0.0.0-20190804152355-33fa380b63d6/go.mod h1:0zBp9GFy9F77zuQbPkAmdUBRiptMaJ1V96eVFdMnXZA=
+github.com/pegnet/LXRHash v0.0.0-20191028162532-138fe8d191a2 h1:ec8NDi02ydYYKw/RpzFZypAh8rvyxZAvkeVVDBo+lxA=
+github.com/pegnet/LXRHash v0.0.0-20191028162532-138fe8d191a2/go.mod h1:0zBp9GFy9F77zuQbPkAmdUBRiptMaJ1V96eVFdMnXZA=
 github.com/pegnet/OracleRecord v0.0.2/go.mod h1:VrY7Shn4oSCli47CsUYBFjH68IenGYtnLaXaaivepu4=
 github.com/pegnet/pegnet v0.0.2/go.mod h1:FUyEs8fyLOzPXZgyqXcqiOhQi58loNtujykIbxxoKbQ=
 github.com/pegnet/pegnet v0.0.3-0.20190827201557-4adccfb5d5ef h1:+uN/sZWOnDMXpRIqr3oW1HFb6W/E6qTvtbKBSF7Orcc=
@@ -224,6 +226,8 @@ github.com/pegnet/pegnet v0.2.0 h1:HAdHYXeWrzolpd7Mt06wGkjtXPAbjmBfXaQTtD0D5xk=
 github.com/pegnet/pegnet v0.2.0/go.mod h1:eqFfa+OGNwuygCKPH/HDnRtwBQBx3gGoJu67Np5PC7c=
 github.com/pegnet/pegnet v0.2.1 h1:rF23x/9ADkxdkvWqTLsr8ZB+1pYnjdzxl8eD5Qqt4dU=
 github.com/pegnet/pegnet v0.2.1/go.mod h1:eqFfa+OGNwuygCKPH/HDnRtwBQBx3gGoJu67Np5PC7c=
+github.com/pegnet/pegnet v0.3.0 h1:Oob388Zho3nzEHj4N9ZKbdSKR8t1nCJYTxsJJkeoHvM=
+github.com/pegnet/pegnet v0.3.0/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
 github.com/pelletier/go-toml v1.2.0/go.mod h1:5z9KED0ma1S8pY6P1sdut58dfprrGBbd/94hg7ilaic=
 github.com/pierrec/lz4 v2.0.5+incompatible/go.mod h1:pdkljMzZIN41W+lC3N2tnIh5sFi+IEE17M5jbnwPHcY=
 github.com/pkg/errors v0.8.0/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
