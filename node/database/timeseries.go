@@ -5,6 +5,8 @@ import (
 	"reflect"
 	"time"
 
+	"github.com/FactomWyomingEntity/prosper-pool/difficulty"
+
 	"github.com/FactomProject/factom"
 
 	"github.com/pegnet/pegnet/opr"
@@ -38,6 +40,10 @@ func (t TimeSeries) Height() int64 {
 	return t.BlockHeight
 }
 
+const (
+	BDiff uint64 = 0xffff000000000000
+)
+
 // DifficultyTimeSeries is the time series that has difficulty values for the graded set.
 type DifficultyTimeSeries struct {
 	TimeSeries
@@ -47,6 +53,9 @@ type DifficultyTimeSeries struct {
 	// 	If we have less than 50, the index will be detailed here.
 	LastGradedIndex      int
 	LastGradedDifficulty uint64 `sql:"type:int unsigned"`
+
+	HighestBasedDifficulty    float64 `sql:"-"`
+	LastGradedBasedDifficulty float64 `sql:"-"`
 }
 
 func HasHighBit(v uint64) bool {
@@ -73,6 +82,9 @@ func (d *DifficultyTimeSeries) AfterFind() (err error) {
 	// Add back the top bit
 	d.HighestDifficulty = d.HighestDifficulty | 0x8000000000000000
 	d.LastGradedDifficulty = d.LastGradedDifficulty | 0x8000000000000000
+
+	d.HighestBasedDifficulty = difficulty.Target(d.HighestDifficulty).Difficulty(BDiff).Float64()
+	d.LastGradedBasedDifficulty = difficulty.Target(d.LastGradedDifficulty).Difficulty(BDiff).Float64()
 	return
 }
 
