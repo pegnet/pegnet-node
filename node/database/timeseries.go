@@ -41,7 +41,8 @@ func (t TimeSeries) Height() int64 {
 }
 
 const (
-	BDiff uint64 = 0xffff000000000000
+	// First block best difficulty
+	BDiff uint64 = 0xfffffffdf97de09b
 )
 
 // DifficultyTimeSeries is the time series that has difficulty values for the graded set.
