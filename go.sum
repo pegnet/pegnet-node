@@ -73,6 +73,8 @@ github.com/FactomProject/serveridentity v0.0.0-20180611231115-cf42d2aa8deb h1:qU
 github.com/FactomProject/serveridentity v0.0.0-20180611231115-cf42d2aa8deb/go.mod h1:qPNpznGlx4PdRmEL7I25U/zQHrbMK1h0Az8FYahuYdo=
 github.com/FactomProject/web v0.1.0 h1:M136UkW3h/V8hH7h+s7qqm3GGSrKGKyXi6p94Z/AgPw=
 github.com/FactomProject/web v0.1.0/go.mod h1:wiLhlN8amF4dalkSy+u75C3xsXaesSHy2cph6b/8PrI=
+github.com/FactomWyomingEntity/prosper-pool v0.3.2 h1:s72a/1xY3YYflzMOZNVQbZb972eXroV9lEkS4ysQzVg=
+github.com/FactomWyomingEntity/prosper-pool v0.3.2/go.mod h1:kfVpe7d+i+aDNAjzpGm6Kc0yLATe3APLSiiqfMW5tCM=
 github.com/FactomWyomingEntity/prosper-pool v0.4.0 h1:PiI34Ihz6BZK+3pYjS5B9ifVQ0VhwgzFaT6i1m3JmOU=
 github.com/FactomWyomingEntity/prosper-pool v0.4.0/go.mod h1:jyfEtqSkp4QvHVwGQz4LalRQPkRH74K5gn4oTaupYW0=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
@@ -222,6 +224,7 @@ github.com/kisielk/errcheck v1.1.0/go.mod h1:EZBBE59ingxPouuu3KfxchcWSUPOHkagtvW
 github.com/kisielk/gotool v1.0.0/go.mod h1:XhKaO+MFFWcvkIS/tQcRk01m1F5IRFswLeQ+oQHNcck=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1 h1:mweAR1A6xJ3oS2pRaGiHgQ4OO8tzTaLawm8vnODuwDk=
 github.com/konsorten/go-windows-terminal-sequences v1.0.1/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
+github.com/konsorten/go-windows-terminal-sequences v1.0.2 h1:DB17ag19krx9CFsz4o3enTrPXyIXCl+2iCXH/aMAp9s=
 github.com/konsorten/go-windows-terminal-sequences v1.0.2/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/kr/logfmt v0.0.0-20140226030751-b84e30acd515/go.mod h1:+0opPa2QZZtGFBFZlji/RkVcI2GknAs/DXo4wKdlNEc=
 github.com/kr/pretty v0.1.0 h1:L/CwN0zerZDmRFUapSPitk6f+Q3+0za1rQkzVuMiMFI=
@@ -277,12 +280,18 @@ github.com/pegnet/pegnet v0.0.3-0.20190911164008-cd7ae5df8781/go.mod h1:eqFfa+OG
 github.com/pegnet/pegnet v0.0.3-0.20190913160915-b191144315a4 h1:nJe0am5ZTtQId89BUwHowUq0O2J2sX2r/N5cdOSoKYY=
 github.com/pegnet/pegnet v0.0.3-0.20190913160915-b191144315a4/go.mod h1:eqFfa+OGNwuygCKPH/HDnRtwBQBx3gGoJu67Np5PC7c=
 github.com/pegnet/pegnet v0.1.0-rc4.0.20191002204629-5a6fd621ca60/go.mod h1:sC7efuGlr6+ithvzL2v76u7AA/9JagWaweAv7UYu2dk=
+github.com/pegnet/pegnet v0.1.0-rc4.0.20191003204103-bada247196d7/go.mod h1:sC7efuGlr6+ithvzL2v76u7AA/9JagWaweAv7UYu2dk=
+github.com/pegnet/pegnet v0.1.0-rc4.0.20191231053516-a319f08e6e6d h1:VsJ9xJW0x+xsFpso8wipZHzZslE5iKFRyv1PG4jgkUM=
+github.com/pegnet/pegnet v0.1.0-rc4.0.20191231053516-a319f08e6e6d/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
+github.com/pegnet/pegnet v0.1.0-rc4.0.20191231054437-6ed4239f6718 h1:O8WdR3840TfNShdbMf8jC53/bs5+BN9lBUH+LxRTKvU=
+github.com/pegnet/pegnet v0.1.0-rc4.0.20191231054437-6ed4239f6718/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
 github.com/pegnet/pegnet v0.1.1 h1:7jlDiVAzU218zq35p0KCgDQmaubJjHClucrkmnx+WD8=
 github.com/pegnet/pegnet v0.1.1/go.mod h1:kexmG3G+4DDZ3LKxXFBVClugkEY9jRT8adSJ3brM3yo=
 github.com/pegnet/pegnet v0.2.0 h1:HAdHYXeWrzolpd7Mt06wGkjtXPAbjmBfXaQTtD0D5xk=
 github.com/pegnet/pegnet v0.2.0/go.mod h1:eqFfa+OGNwuygCKPH/HDnRtwBQBx3gGoJu67Np5PC7c=
 github.com/pegnet/pegnet v0.2.1 h1:rF23x/9ADkxdkvWqTLsr8ZB+1pYnjdzxl8eD5Qqt4dU=
 github.com/pegnet/pegnet v0.2.1/go.mod h1:eqFfa+OGNwuygCKPH/HDnRtwBQBx3gGoJu67Np5PC7c=
+github.com/pegnet/pegnet v0.2.3-0.20191203221152-328fdbaacef3 h1:rvXhGAJ58ZCT2Yp+p7HbSUsWt8taxbiutRFV91JHWhM=
 github.com/pegnet/pegnet v0.2.3-0.20191203221152-328fdbaacef3/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
 github.com/pegnet/pegnet v0.3.0 h1:Oob388Zho3nzEHj4N9ZKbdSKR8t1nCJYTxsJJkeoHvM=
 github.com/pegnet/pegnet v0.3.0/go.mod h1:Fy8Qohe9zIuqO9Q/ZOLUNpP2kuiFqxjevzaS3IL62+E=
@@ -362,6 +371,7 @@ github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXf
 github.com/stretchr/testify v1.3.0 h1:TivCn/peBQ7UY8ooIcPgZFpTNSz0Q2U6UrFlUfqbe0Q=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.3.1-0.20190311161405-34c6fa2dc709/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
+github.com/stretchr/testify v1.4.0 h1:2E4SXV/wtOkTonXsotYi4li6zVWxYlZuYNCXe9XRJyk=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
 github.com/syndtr/goleveldb v1.0.0 h1:fBdIW9lB4Iz0n9khmH8w27SJ3QEJ7+IgjPEwGSZiFdE=
 github.com/syndtr/goleveldb v1.0.0/go.mod h1:ZVVdQEZoIme9iO1Ch2Jdy24qqXrMMOU6lpPAyBWyWuQ=
