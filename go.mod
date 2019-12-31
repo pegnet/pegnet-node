@@ -5,7 +5,7 @@ go 1.12
 require (
 	cloud.google.com/go v0.44.3 // indirect
 	github.com/FactomProject/factom v0.0.0-20190712163801-e7717c4ab072
-	github.com/FactomWyomingEntity/prosper-pool v0.4.0
+	github.com/FactomWyomingEntity/prosper-pool v0.3.2
 	github.com/denisenkom/go-mssqldb v0.0.0-20190806190131-db2462fef53b // indirect
 	github.com/google/go-cmp v0.3.1 // indirect
 	github.com/google/pprof v0.0.0-20190723021845-34ac40c74b70 // indirect
@@ -13,7 +13,7 @@ require (
 	github.com/jinzhu/gorm v1.9.11
 	github.com/kr/pty v1.1.8 // indirect
 	github.com/lib/pq v1.2.0 // indirect
-	github.com/pegnet/pegnet v0.3.0
+	github.com/pegnet/pegnet v0.1.0-rc4.0.20191231054437-6ed4239f6718
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cobra v0.0.5
 	github.com/zpatrick/go-config v0.0.0-20190509173111-460869022dbd
