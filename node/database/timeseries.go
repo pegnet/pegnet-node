@@ -6,11 +6,8 @@ import (
 	"time"
 
 	"github.com/FactomWyomingEntity/prosper-pool/difficulty"
-
 	"github.com/FactomProject/factom"
-
 	"github.com/pegnet/pegnet/opr"
-
 	"github.com/jinzhu/gorm"
 )
 
