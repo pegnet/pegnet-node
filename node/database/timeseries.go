@@ -2,6 +2,7 @@ package database
 
 import (
 	"fmt"
+	"math"
 	"reflect"
 	"time"
 
@@ -98,6 +99,16 @@ type NetworkHashrateTimeSeries struct {
 
 	// BasedOnLast is a network hashrate estimate based on the last graded opr
 	BasedOnLast float64
+}
+
+func (d *NetworkHashrateTimeSeries) AfterFind() (err error) {
+	if math.IsInf(d.BasedOnBest, 0) || math.IsNaN(d.BasedOnBest) {
+		d.BasedOnBest = -1
+	}
+	if math.IsInf(d.BasedOnLast, 0) || math.IsNaN(d.BasedOnLast) {
+		d.BasedOnLast = -1
+	}
+	return
 }
 
 // NumberOPRRecordsTimeSeries is the number of oprs submitted in a given block
