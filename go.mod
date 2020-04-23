@@ -13,7 +13,7 @@ require (
 	github.com/jinzhu/gorm v1.9.11
 	github.com/kr/pty v1.1.8 // indirect
 	github.com/lib/pq v1.2.0 // indirect
-	github.com/pegnet/pegnet v0.5.0
+	github.com/pegnet/pegnet v0.5.1-0.20200423173645-441d2db58b46
 	github.com/sirupsen/logrus v1.4.2
 	github.com/spf13/cobra v0.0.5
 	github.com/zpatrick/go-config v0.0.0-20190509173111-460869022dbd
